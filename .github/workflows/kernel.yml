@@ -233,18 +233,21 @@ jobs:
           ARCH: ${{ steps.generate-args.outputs.ARCH }}
         if: ${{ env.ENABLE_KERNELSU == 'true' }}
         run: |
-          # Delete old KernelSU
-          if [ -d "./KernelSU" ]; then
-            rm -rf "./KernelSU"
-          fi
-          if [ -d "./drivers/kernelsu" ]; then
-            rm -rf "./drivers/kernelsu"
-          fi
+          #special enable KernelSU method
+          sh ./drivers/staging/kernelsu/setup.sh
 
-          # Apply new KernelSU patches
-          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+          ## Delete old KernelSU
+          #if [ -d "./KernelSU" ]; then
+          #  rm -rf "./KernelSU"
+          #fi
+          #if [ -d "./drivers/kernelsu" ]; then
+          #  rm -rf "./drivers/kernelsu"
+          #fi
+          
+          ## Apply new KernelSU patches
+          #curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
 
-          cat arch/${{ env.ARCH }}/configs/${{ env.KERNEL_DEFCONFIG_PATH }}
+          #cat arch/${{ env.ARCH }}/configs/${{ env.KERNEL_DEFCONFIG_PATH }}
 
       - name: 😋 Setup LXC docker
         working-directory: ${{ env.KERNEL_NAME }}
