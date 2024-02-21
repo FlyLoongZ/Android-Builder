@@ -1,0 +1,35 @@
+[
+    {
+      "kernelSource": {
+        "name": "Redmi note 12 turbo",
+        "repo": "https://github.com/FlyLoongZ/android_kernel_xiaomi_marble.git",
+        "branch": "melt-rebase",
+        "device": "marble",
+        "defconfig": "marble_defconfig"
+      },
+      "enableCcache": true,
+      "toolchains": [
+        {
+          "name": "clang",
+          "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android12--mainline-release/clang-r416183b1.tar.gz",
+          "binaryEnv": [
+            "bin"
+          ]
+        }
+      ],
+      "params": {
+        "ARCH": "arm64",
+        "CC": "clang",
+        "externalCommands": {
+            "LLVM": "1",
+            "LLVM_IAS": "1"
+          }
+      },
+      "AnyKernel3": {
+        "use": true,
+        "release": true
+      },
+      "enableKernelSU": true,
+      "enableLXC": false
+    }
+] 
