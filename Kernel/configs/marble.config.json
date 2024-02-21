@@ -1,7 +1,7 @@
 [
     {
       "kernelSource": {
-        "name": "Redmi note 12 turbo",
+        "name": "marble-android12-5.10",
         "repo": "https://github.com/FlyLoongZ/android_kernel_xiaomi_marble.git",
         "branch": "melt-rebase",
         "device": "marble",
