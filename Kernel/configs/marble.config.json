@@ -7,7 +7,7 @@
         "device": "marble",
         "defconfig": "marble_defconfig"
       },
-      "enableCcache": true,
+      "enableCcache": false,
       "toolchains": [
         {
           "name": "clang",
