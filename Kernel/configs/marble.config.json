@@ -2,7 +2,7 @@
     {
       "kernelSource": {
         "name": "marble-android12-5.10",
-        "repo": "https://github.com/Pzqqt/android_kernel_xiaomi_marble.git",
+        "repo": "https://github.com/FlyLoongZ/android_kernel_xiaomi_marble.git",
         "branch": "melt-rebase",
         "device": "marble",
         "defconfig": "marble_defconfig"
