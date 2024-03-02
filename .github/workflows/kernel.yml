@@ -5,8 +5,8 @@ on:
     paths:
       - ".github/workflows/kernel.yml"
   workflow_dispatch:
-  schedule:
-    - cron: "14 13 * * 5"
+  #schedule:
+  #  - cron: "14 13 * * 5"
 
 jobs:
   Read-configuration:
@@ -65,6 +65,9 @@ jobs:
 
       # Whether to enable KernelSU
       ENABLE_KERNELSU: ${{ matrix.CONFIG.enableKernelSU }}
+
+      # KernelSU版本 最新tag(稳定版本)/main分支(开发版本)/指定tag(比如v0.5.2): "-"/"main"/"v0.5.2"
+      KERNELSU_VERSION: ${{ matrix.CONFIG.KernelSUversion }}
 
       # Whether to enable LXC docker
       ENABLE_LXC: ${{ matrix.CONFIG.enableLXC }}
@@ -241,7 +244,7 @@ jobs:
           fi
           
           # Apply new KernelSU patches
-          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s ${{ env.KERNELSU_VERSION }}
 
           cat arch/${{ env.ARCH }}/configs/${{ env.KERNEL_DEFCONFIG_PATH }}
 

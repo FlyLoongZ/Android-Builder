@@ -30,6 +30,7 @@
         "release": true
       },
       "enableKernelSU": true,
+      "KernelSUversion": "-",
       "enableLXC": false
     }
 ] 
