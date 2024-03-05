@@ -29,7 +29,7 @@
         "use": true,
         "release": true
       },
-      "enableKernelSU": flase,
+      "enableKernelSU": false,
       "KernelSUversion": "-",
       "enableLXC": false
     }
